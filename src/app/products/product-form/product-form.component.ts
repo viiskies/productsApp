@@ -15,6 +15,7 @@ export class ProductFormComponent implements OnInit {
 
 	product:Product = new Product();
 	key:any;
+	upload:any;
 
 	constructor(
 		private tS: ProductService, 
@@ -33,12 +34,15 @@ export class ProductFormComponent implements OnInit {
 				);
 		});
 	}
+	onChange(event) {
+		this.upload = event.srcElement.files;
+	}
 
 	onSubmit(pav:any) {
 		if(!this.key) {
-			this.tS.createProduct(pav.value);
+			this.tS.createProduct(pav.value, this.upload);
 		} else {
-			this.tS.updateProduct(this.key, pav.value);
+			this.tS.updateProduct(this.key, pav.value, this.upload);
 		}		
 		this.router.navigate(['/']);
 	}

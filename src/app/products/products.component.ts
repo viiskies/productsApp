@@ -6,14 +6,19 @@ import { ProductService } from './shared/product.service';
 	templateUrl: './products.component.html',
 	styleUrls: ['./products.component.css']
 })
+
 export class ProductsComponent implements OnInit {
 
 	products:any;
 
-	constructor(private tSrv: ProductService) { }
+	constructor(private tS: ProductService) { }
 
 	ngOnInit() {
-		this.products = this.tSrv.getAllProducts();
+		this.products = this.tS.getAllProducts();
+	}
+
+	onDelete(key:string) {
+		this.tS.deleteProduct(key);
 	}
 
 }
