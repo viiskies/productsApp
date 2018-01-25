@@ -15,7 +15,7 @@
 				<td><a routerLink="/edit/{{product.key}}">{{product.title}}</a></td>
 				<td>{{product.description}}</td> 
 				<td>{{product.price}}</td>
-				<td><img class="img-fluid" src="{{product.url}}"></td>
+				<td><img class="w-50 img-thumbnail" src="{{product.url}}"></td>
 				<td><button type="button" class="btn btn-danger" (click)="onDelete(product.key)" >Remove</button></td>
 			</tr>
 		</tbody>

@@ -16,6 +16,8 @@ export class ProductFormComponent implements OnInit {
 	product:Product = new Product();
 	key:any;
 	upload:any;
+	fileUploaded:string = '';
+	filePickerMessage:string = "Choose image...";
 
 	constructor(
 		private tS: ProductService, 
@@ -35,7 +37,9 @@ export class ProductFormComponent implements OnInit {
 		});
 	}
 	onChange(event) {
-		this.upload = event.srcElement.files;
+		this.upload = event.target.files;
+		this.fileUploaded = event.target.files[0].name;
+		this.filePickerMessage = "Image chosen";
 	}
 
 	onSubmit(pav:any) {
