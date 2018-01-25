@@ -1,0 +1,22 @@
+<div class="product">
+	<form (ngSubmit)="onSubmit(pav)" #pav="ngForm">
+		<div class="form-group">
+			<label>Title</label><br>
+			<input type="text" [(ngModel)]="product.title" name="title" value="">
+		</div>
+		<div class="form-group">
+			<label>Description</label><br>
+			<textarea name="description" [(ngModel)]="product.description" rows="8" cols="80"></textarea>
+		</div>
+		<div class="form-group">
+			<label>Price</label><br>
+			<input type="number" name="price" [(ngModel)]="product.price" value="">
+		</div>
+
+		<div class="form-group">
+			<button type="submit" name="button">
+				Submit Product
+			</button>
+		</div>
+	</form>
+</div>
