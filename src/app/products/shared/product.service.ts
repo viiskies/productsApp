@@ -47,12 +47,23 @@ export class ProductService {
 		);
 	}
 
-	updateProduct(key: string, form: any, upload:any) {
+	updateProduct(key:string, form:any, upload:any) {
 		this.productRow.update(key, form);
 	}
 
 	deleteProduct(key:string) {
-		// this.productRow.push(form);
 		this.productRow.remove(key);
 	}
+
+	deleteProducts(arr1:Array<string>) {
+		// console.log(this.productRow);
+		arr1.forEach(function (key) {
+			// this.deleteProduct(key);
+			// console.log(this.productRow);
+			// this.productRow.remove(key);
+			console.log(key);
+		});
+	}
+
+
 }

@@ -3,23 +3,25 @@
 	<table class="table" >
 		<thead>
 			<tr>
+				<th scope="col">Checkbox</th>
 				<th scope="col">Title</th>
 				<th scope="col">Description</th>
 				<th scope="col">Price</th>
-				<th scope="col">Picture</th>
+				<!-- <th scope="col">Picture</th> -->
 				<th scope="col">Delete</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor="let product of products | async">
+				<td>				
+					<input type="checkbox" name="check" aria-label="Checkbox" (click)="makeProductsToDelete(product.key)">					
+				</td>
 				<td><a routerLink="/edit/{{product.key}}">{{product.title}}</a></td>
 				<td>{{product.description}}</td> 
 				<td>{{product.price}}</td>
-				<td><img class="w-50 img-thumbnail" src="{{product.url}}"></td>
-				<td><button type="button" class="btn btn-danger" (click)="onDelete(product.key)" >Remove</button></td>
+				<td><button type="button" class="btn btn-danger" (click)="onDelete(product.key)">Remove</button></td>
 			</tr>
 		</tbody>
-
 	</table>
-
+	<button type="button" class="btn btn-danger" (click)="onDeleteBunch()">Remove Checked</button>
 </div>
