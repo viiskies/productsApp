@@ -28,12 +28,9 @@ export class ProductsComponent implements OnInit {
 		} else {
 			this.productsToDelete.push(key);
 		}
-		console.log(this.productsToDelete);
 	}
 	
 	onDeleteBunch() {
-		console.log('ondeleteBunch');
-		// console.log(this.productsToDelete);
 		this.tS.deleteProducts(this.productsToDelete);
 	}
 }
